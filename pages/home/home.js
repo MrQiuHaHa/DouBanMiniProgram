@@ -69,6 +69,7 @@ Page({
 
   updateMovie: (movie) => {
     let stars = parseInt(movie.rating.stars);
+    if (stars == 0) return;
     movie.stars = {}
     movie.stars.on = stars/10
     movie.stars.half = stars%10==0 ? 0:1

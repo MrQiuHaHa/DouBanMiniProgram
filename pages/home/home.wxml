@@ -17,20 +17,23 @@
                 <view wx:for="{{movies}}" class="item" wx:key="unique">
                     <image class="photo" src= "{{item.images.large}}"/>
                     <view class="title">{{item.title}}</view>
-                    <view class="score">
-                        <view class="stars">
-                            <block wx:for="{{item.stars.on}}" wx:key="unique">
-                                <image class="star" src="/assets/imgs/rating_star_small_on.png" />
-                            </block>
-                            <block wx:for="{{item.stars.half}}" wx:key="unique">
-                                <image class="star" src="/assets/imgs/rating_star_small_half.png" />
-                            </block>
-                            <block wx:for="{{item.stars.off}}" wx:key="unique">
-                                <image class="star" src="/assets/imgs/rating_star_small_off.png" />
-                            </block>
-                        </view>
-                        {{item.rating.average}}
-                    </view>
+                    <block wx:if="{{item.stars}}">
+                        <view class="score">
+                            <view class="stars">
+                                <block wx:for="{{item.stars.on}}" wx:key="unique">
+                                    <image class="star" src="/assets/imgs/rating_star_small_on.png" />
+                                </block>
+                                <block wx:for="{{item.stars.half}}" wx:key="unique">
+                                    <image class="star" src="/assets/imgs/rating_star_small_half.png" />
+                                </block>
+                                <block wx:for="{{item.stars.off}}" wx:key="unique">
+                                    <image class="star" src="/assets/imgs/rating_star_small_off.png" />
+                                </block>
+                            </view>
+                            {{item.rating.average}}
+                         </view>
+                    </block>
+                    <block wx:else>暂无评分</block>
                 </view>
             </view>
         </view>
