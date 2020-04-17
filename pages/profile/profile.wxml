@@ -1,0 +1,51 @@
+<!--pages/profile/profile.wxml-->
+
+
+<view class="container">
+
+    <view>
+            <view class="login-wrapper">
+                <view class="login" bind:tap="loginJump">登录</view>
+                <image class="bg" src="/assets/imgs/bg_mine_login.png" mode="aspectFill"/>
+            </view>
+
+            <view class="items-wrapper">
+                <view class="title-wrapper">
+                    <view class="title">我的书影音</view>
+                    <view class="view">
+                        登录查看
+                        <view class="arrow"></view>
+                    </view>
+                </view>
+
+                <view class="items">
+                    <view wx:for="{{items}}" wx:key="unique">
+                        <view class="item">
+                            <image class="icon" src="/assets/imgs/{{item.icon}}"/>
+                            <view class="info-wrapper">
+                                <view class="info">
+                                    <view class="left">
+                                        <view class="top">{{item.title}}</view>
+                                        <view class="bottom">
+                                            <view class="count">{{item.count}}</view>
+                                            <view class="text">{{item.has}}</view>
+                                        </view>
+                                    </view>
+                                    <view id="item-{{index}}" class="right" bind:tap="beginClick">
+                                        <text class="text">{{item.mark}}</text>
+                                        <view class="begin">立即开启</view>
+                                        <view class="arrow"></view>
+                                    </view>
+                                </view>
+                                <view wx:if="{{index < items.length -1}}" class="devider"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+    </view>
+      
+
+
+    <view class="version">版本1.0.39</view>
+</view>
