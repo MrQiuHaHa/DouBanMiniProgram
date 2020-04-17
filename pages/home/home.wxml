@@ -1,11 +1,36 @@
 <!--pages/home/home.wxml-->
 
 <view>
-    <view class="header">
-        <view class="search-wrapper">
+    <view class="search-wrapper">
+        <view class="search">
             <image src="/assets/imgs/ic_search.png"/>
             搜索
         </view>
     </view>
-    <view class="main"></view>
+    <view class="main">
+        <view class="row">
+            <view class="title-wrapper">
+                <view class="title">影院热线</view>
+                <view class="more">查看更多 <view class="arrow"></view> </view>
+            </view>
+            <view class="items">
+                <view wx:for="{{movies}}" class="item">
+                    <image class="photo" src="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2578722076.jpg"/>
+                    <view class="title">
+                        我和我的祖国
+                    </view>
+                    <view class="score">
+                        <view class="stars">
+                            <image class="star" src="/assets/imgs/rating_star_small_on.png" />
+                            <image class="star" src="/assets/imgs/rating_star_small_on.png" />
+                            <image class="star" src="/assets/imgs/rating_star_small_on.png" />
+                            <image class="star" src="/assets/imgs/rating_star_small_on.png" />
+                            <image class="star" src="/assets/imgs/rating_star_small_on.png" />
+                        </view>
+                        8.9
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
 </view>

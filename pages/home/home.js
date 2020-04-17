@@ -1,6 +1,9 @@
 // pages/home/home.js
 Page({
 
+  data: {
+    movies: []
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -11,7 +14,7 @@ Page({
 
   loadData: function(city) {
 
-    var reqTask = wx.request({
+    wx.request({
       url: 'https://douban-api.uieee.com/v2/movie/in_theaters',
       data: {
         city: city
@@ -20,7 +23,9 @@ Page({
         'content-type': 'json'
       },
       success: (result) => {
-        console.log(result)
+        this.setData ({
+          movies: result.data.subjects
+        });
       },
       fail: () => {
         wx.db.toast('获取正在热映信息失败')
