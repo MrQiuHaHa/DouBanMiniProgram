@@ -53,6 +53,13 @@
     display: flex;
     overflow-x: auto;
     margin: 0 7.5rpx;
+
+}
+/* 隐藏scroll滚动条 */
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
 }
 
 .item {
@@ -60,10 +67,12 @@
     flex-direction: column;
     align-items: center;
     margin: 0 7.5rpx;
+    width: 210rpx;
+    
 }
 
 .item .photo {
-    width: 210rpx;
+    width: 100%;
     height: 301rpx;
     margin-bottom: 15rpx;
 }
@@ -71,6 +80,11 @@
 .item .title {
     font-size: 30rpx;
     font-weight: bold;
+    width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;/*省略号*/
+    text-align: center;
+    white-space: nowrap;
 }
 
 .score {

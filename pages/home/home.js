@@ -23,6 +23,7 @@ Page({
         'content-type': 'json'
       },
       success: (result) => {
+        console.log(result)
         this.setData ({
           movies: result.data.subjects
         });
@@ -39,7 +40,7 @@ Page({
     wx.getLocation({
       success: (resLocation) => {
           wx.request({
-              url: 'https://api.map.baidu.com/reverse_geocoding/v3', //仅为示例，并非真实的接口地址
+              url: 'https://api.map.baidu.com/reverse_geocoding/v3',
               data: {
                 output: 'json',
                 coordtype: 'wgs84ll',
