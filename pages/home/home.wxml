@@ -14,11 +14,9 @@
                 <view class="more">查看更多 <view class="arrow"></view> </view>
             </view>
             <view class="items">
-                <view wx:for="{{movies}}" class="item">
-                    <image class="photo" src="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2578722076.jpg"/>
-                    <view class="title">
-                        我和我的祖国
-                    </view>
+                <view wx:for="{{movies}}" class="item" wx:key="unique">
+                    <image class="photo" src= "{{item.images.large}}"/>
+                    <view class="title">{{item.title}}</view>
                     <view class="score">
                         <view class="stars">
                             <image class="star" src="/assets/imgs/rating_star_small_on.png" />
@@ -27,7 +25,7 @@
                             <image class="star" src="/assets/imgs/rating_star_small_on.png" />
                             <image class="star" src="/assets/imgs/rating_star_small_on.png" />
                         </view>
-                        8.9
+                        {{item.rating.average}}
                     </view>
                 </view>
             </view>
