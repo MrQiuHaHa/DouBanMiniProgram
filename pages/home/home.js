@@ -24,8 +24,12 @@ Page({
       },
       success: (result) => {
         console.log(result)
+        let movies = result.data.subjects
+        for (let index = 0; index < movies.length; index++) {
+          this.updateMovie(movies[index])
+        }
         this.setData ({
-          movies: result.data.subjects
+          movies: movies
         });
       },
       fail: () => {
@@ -47,9 +51,6 @@ Page({
                 ak: 'TQYhxPRUI6BVI4ITHCpZ2IN0PQbWtFLM',
                 location: resLocation.latitude+','+resLocation.longitude
               },
-              header: {
-                'content-type': 'application/json' // 默认值
-              },
               success (res) {
                 let city = res.data.result.addressComponent.city
                 city = city.substring(0, city.length - 1)
@@ -59,11 +60,19 @@ Page({
                 wx.db.toast('获取城市信息失败')
               }
           })
-
       },
       fail:() =>{
         wx.db.toast('获取位置信息失败')
       }
-  })
+    })
+  },
+
+  updateMovie: (movie) => {
+    let stars = parseInt(movie.rating.stars);
+    movie.stars = {}
+    movie.stars.on = stars/10
+    movie.stars.half = stars%10==0 ? 0:1
+    movie.stars.off = stars%10==0 ? 5-stars/10:4-stars/10
   }
+
 })

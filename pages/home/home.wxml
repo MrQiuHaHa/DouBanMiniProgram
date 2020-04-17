@@ -19,11 +19,15 @@
                     <view class="title">{{item.title}}</view>
                     <view class="score">
                         <view class="stars">
-                            <image class="star" src="/assets/imgs/rating_star_small_on.png" />
-                            <image class="star" src="/assets/imgs/rating_star_small_on.png" />
-                            <image class="star" src="/assets/imgs/rating_star_small_on.png" />
-                            <image class="star" src="/assets/imgs/rating_star_small_on.png" />
-                            <image class="star" src="/assets/imgs/rating_star_small_off.png" />
+                            <block wx:for="{{item.stars.on}}" wx:key="unique">
+                                <image class="star" src="/assets/imgs/rating_star_small_on.png" />
+                            </block>
+                            <block wx:for="{{item.stars.half}}" wx:key="unique">
+                                <image class="star" src="/assets/imgs/rating_star_small_half.png" />
+                            </block>
+                            <block wx:for="{{item.stars.off}}" wx:key="unique">
+                                <image class="star" src="/assets/imgs/rating_star_small_off.png" />
+                            </block>
                         </view>
                         {{item.rating.average}}
                     </view>
