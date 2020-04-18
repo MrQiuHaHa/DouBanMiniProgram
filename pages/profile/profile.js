@@ -40,6 +40,10 @@ Page({
 
   loginJump() {
 
+    wx.navigateTo({
+      url: '/pages/login/login'
+    });
+      
   },
   
 })
