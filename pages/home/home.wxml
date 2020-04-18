@@ -33,7 +33,7 @@
                             {{item.rating.average}}
                          </view>
                     </block>
-                    <block wx:else>暂无评分</block>
+                    <block wx:else> <view class="tips">暂无评分</view></block>
                 </view>
             </view>
         </view>

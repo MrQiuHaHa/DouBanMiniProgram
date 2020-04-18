@@ -71,9 +71,9 @@ Page({
     let stars = parseInt(movie.rating.stars);
     if (stars == 0) return;
     movie.stars = {}
-    movie.stars.on = stars/10
+    movie.stars.on = stars%10==0 ? stars/10 : stars/10-0.5
     movie.stars.half = stars%10==0 ? 0:1
-    movie.stars.off = stars%10==0 ? 5-stars/10:4-stars/10
+    movie.stars.off = movie.stars.half ==0 ? 5-movie.stars.on : 3-movie.stars.on
   }
 
 })
