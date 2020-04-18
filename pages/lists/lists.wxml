@@ -2,20 +2,7 @@
 
 
 <view class="Container">
-    <movie-item class="moveItem"
-        wx:for="{{ movies }}" 
-        wx:key="unique" 
-        wx:for-item="movie" 
-        movie="{{movie}}">
-    </movie-item>
-    <view wx:if="{{movies.length % 3 != 0}}" class="item hidden">
-        <image class="photo"/>
-        <view class="title"></view>
-        <view class="score"></view>
-    </view>
-    <view wx:if="{{movies.length % 3 == 1}}" class="item hidden">
-        <image class="photo"/>
-        <view class="title"></view>
-        <view class="score"></view>
+    <view class="item" wx:for="{{ movies }}" wx:key="unique" wx:for-item="movie">
+        <movie-item movie="{{ movie }}"></movie-item>
     </view>
 </view>

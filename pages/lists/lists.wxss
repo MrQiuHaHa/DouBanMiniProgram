@@ -2,15 +2,13 @@
 
 .Container {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
     margin: 15rpx 0;
 }
-.moveItem {
-    margin: 15rpx 7.5rpx;
-}
 
-.hidden {
-    visibility: hidden;
+.item {
+    display: flex;
+    width: 33.33%;
+    justify-content: center;
+    margin-bottom: 30rpx;
 }
