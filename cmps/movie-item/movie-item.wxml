@@ -1,6 +1,6 @@
 <!--cmps/movie-item/movie-item.wxml-->
 
-<view class="item">
+<view class="item" bind:tap="detail">
     <image class="photo" src= "{{movie.images.large}}"/>
     <view class="title">{{movie.title}}</view>
     <block wx:if="{{movie.stars}}">

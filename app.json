@@ -4,7 +4,8 @@
     "pages/profile/profile",
     "pages/login/login",
     "pages/agreement/agreement",
-    "pages/lists/lists"
+    "pages/lists/lists",
+    "pages/detail/detail"
   ],
   "permission": {
     "scope.userLocation": {
