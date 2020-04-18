@@ -35,6 +35,11 @@ Page({
    */
   onLoad: function (options) {
 
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#42BD55',
+    });
+      
     this.loadLocalData()
     // this.loadCity(this.loadData)  
   },
