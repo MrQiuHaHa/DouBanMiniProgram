@@ -14,27 +14,12 @@
                 <view id="{{index}}" class="more" bind:tap="viewMore">查看更多 <view class="arrow"></view> </view>
             </view>
             <view class="items">
-                <view wx:for="{{ module.movies }}" wx:key="unique" wx:for-item="movie" class="item">
-                    <image class="photo" src= "{{movie.images.large}}"/>
-                    <view class="title">{{movie.title}}</view>
-                    <block wx:if="{{movie.stars}}">
-                        <view class="score">
-                            <view class="stars">
-                                <block wx:for="{{movie.stars.on}}" wx:key="unique">
-                                    <image class="star" src="/assets/imgs/rating_star_small_on.png" />
-                                </block>
-                                <block wx:for="{{movie.stars.half}}" wx:key="unique">
-                                    <image class="star" src="/assets/imgs/rating_star_small_half.png" />
-                                </block>
-                                <block wx:for="{{movie.stars.off}}" wx:key="unique">
-                                    <image class="star" src="/assets/imgs/rating_star_small_off.png" />
-                                </block>
-                            </view>
-                            {{movie.rating.average}}
-                         </view>
-                    </block>
-                    <block wx:else> <view class="tips">暂无评分</view></block>
-                </view>
+                <movie-item class="moveItem"
+                 wx:for="{{ module.movies }}" 
+                 wx:key="unique" 
+                 wx:for-item="movie" 
+                 movie="{{movie}}">
+                </movie-item>
             </view>
         </view>
     </view>
