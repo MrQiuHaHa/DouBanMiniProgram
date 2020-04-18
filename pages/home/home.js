@@ -2,7 +2,33 @@
 Page({
 
   data: {
-    movies: []
+    modules: [
+      {
+        title: '影院热映',
+        url: 'https://douban-api.uieee.com/v2/movie/in_theaters',
+        movies: []
+      },
+      {
+        title: '新片榜',
+        url: 'https://douban-api.uieee.com/v2/movie/new-movies',
+        movies: []
+      },
+      {
+        title: '口碑榜',
+        url: 'https://douban-api.uieee.com/v2/movie/weekly',
+        movies: []
+      },
+      {
+        title: '北美票房榜',
+        url: 'https://douban-api.uieee.com/v2/movie/us_box',
+        movies: []
+      },
+      {
+        title: 'Top250',
+        url: 'https://douban-api.uieee.com/v2/movie/top250',
+        movies: []
+      }
+    ]
   },
   /**
    * 生命周期函数--监听页面加载
@@ -14,28 +40,33 @@ Page({
 
   loadData: function(city) {
 
-    wx.request({
-      url: 'https://douban-api.uieee.com/v2/movie/in_theaters',
-      data: {
-        city: city
-      },
-      header: {
-        'content-type': 'json'
-      },
-      success: (result) => {
-        console.log(result)
-        let movies = result.data.subjects
-        for (let index = 0; index < movies.length; index++) {
-          this.updateMovie(movies[index])
+    for (let index = 0; index < 5; index++) {
+
+      wx.request({
+        url: this.data.modules[index].url,
+        data: {city: city},
+        header: {
+          'content-type': 'json'
+        },
+        success: (result) => {
+          console.log(result)
+          let movies = result.data.subjects
+          let obj = this.data.modules[index]
+          for (let idx = 0; idx < movies.length; idx++) {
+            let movie = movies[idx] || movies[idx].subject
+            this.updateMovie(movie)
+            obj.movies.push(movie)
+          }
+          // this.data.modules[index].movies = movies
+          this.setData(this.data)
+        },
+        fail: () => {
+          wx.db.toast('获取正在热映信息失败')
         }
-        this.setData ({
-          movies: movies
-        });
-      },
-      fail: () => {
-        wx.db.toast('获取正在热映信息失败')
-      }
-    });
+      });
+      
+    }
+    
       
   },
 
@@ -68,9 +99,10 @@ Page({
   },
 
   updateMovie: (movie) => {
+    movie.stars = {}
     let stars = parseInt(movie.rating.stars);
     if (stars == 0) return;
-    movie.stars = {}
+    
     movie.stars.on = stars%10==0 ? stars/10 : stars/10-0.5
     movie.stars.half = stars%10==0 ? 0:1
     movie.stars.off = movie.stars.half ==0 ? 5-movie.stars.on : 3-movie.stars.on

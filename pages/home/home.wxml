@@ -8,29 +8,29 @@
         </view>
     </view>
     <view class="main">
-        <view class="row">
+        <view wx:for="{{ modules }}" wx:key="unique" wx:for-item="module" class="row">
             <view class="title-wrapper">
-                <view class="title">影院热线</view>
+                <view class="title">{{ module.title }}</view>
                 <view class="more">查看更多 <view class="arrow"></view> </view>
             </view>
             <view class="items">
-                <view wx:for="{{movies}}" class="item" wx:key="unique">
-                    <image class="photo" src= "{{item.images.large}}"/>
-                    <view class="title">{{item.title}}</view>
-                    <block wx:if="{{item.stars}}">
+                <view wx:for="{{ module.movies }}" wx:key="unique" wx:for-item="movie" class="item">
+                    <image class="photo" src= "{{movie.images.large}}"/>
+                    <view class="title">{{movie.title}}</view>
+                    <block wx:if="{{movie.stars}}">
                         <view class="score">
                             <view class="stars">
-                                <block wx:for="{{item.stars.on}}" wx:key="unique">
+                                <block wx:for="{{movie.stars.on}}" wx:key="unique">
                                     <image class="star" src="/assets/imgs/rating_star_small_on.png" />
                                 </block>
-                                <block wx:for="{{item.stars.half}}" wx:key="unique">
+                                <block wx:for="{{movie.stars.half}}" wx:key="unique">
                                     <image class="star" src="/assets/imgs/rating_star_small_half.png" />
                                 </block>
-                                <block wx:for="{{item.stars.off}}" wx:key="unique">
+                                <block wx:for="{{movie.stars.off}}" wx:key="unique">
                                     <image class="star" src="/assets/imgs/rating_star_small_off.png" />
                                 </block>
                             </view>
-                            {{item.rating.average}}
+                            {{movie.rating.average}}
                          </view>
                     </block>
                     <block wx:else> <view class="tips">暂无评分</view></block>

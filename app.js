@@ -2,6 +2,12 @@
 App({
   onLaunch: function () {
    
+    this.initToast();
+
+    
+  },
+
+  initToast: function () {
     const time = 1500
 
     wx.db = {};
@@ -28,6 +34,7 @@ App({
       });
     }
   },
+
   globalData: {
     userInfo: null
   }

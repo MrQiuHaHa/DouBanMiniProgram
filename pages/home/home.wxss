@@ -21,6 +21,9 @@
     margin-right: 10rpx;
 }
 
+.main {
+    margin-bottom: 15rpx;
+}
 
 .title-wrapper {
     display: flex;
@@ -91,12 +94,14 @@
     font-size: 25rpx;
     display: flex;
     align-items: center;
+    color: #818181;
 }
 
 .score {
     display: flex;
     align-items: center;
     color: #818181;
+    font-size: 25rpx;
 }
 
 .score .stars {
@@ -105,6 +110,6 @@
 }
 
 .stars .star {
-    width: 32rpx;
-    height: 32rpx;
+    width: 24rpx;
+    height: 24rpx;
 }
