@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/profile/profile",
     "pages/login/login",
-    "pages/agreement/agreement"
+    "pages/agreement/agreement",
+    "pages/lists/lists"
   ],
   "permission": {
     "scope.userLocation": {

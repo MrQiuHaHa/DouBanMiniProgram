@@ -10,7 +10,7 @@ Page({
       },
       {
         title: '新片榜',
-        url: 'https://douban-api.uieee.com/v2/movie/new-movies',
+        url: 'https://douban-api.uieee.com/v2/movie/new_movies',
         movies: []
       },
       {
@@ -35,12 +35,22 @@ Page({
    */
   onLoad: function (options) {
 
-    this.loadCity(this.loadData)  
+    this.loadLocalData()
+    // this.loadCity(this.loadData)  
+  },
+
+  loadLocalData: function() {
+
+    for (let index = 0; index < this.data.modules.length; index++) {
+      const obj = this.data.modules[index]
+      obj.movies = wx.getStorageSync(obj.title) || [];
+    }
+    this.setData(this.data)
   },
 
   loadData: function(city) {
 
-    for (let index = 0; index < 5; index++) {
+    for (let index = 0; index < this.data.modules.length; index++) {
 
       wx.request({
         url: this.data.modules[index].url,
@@ -57,6 +67,11 @@ Page({
             obj.movies.push(movie)
           }
           this.setData(this.data)
+          wx.setStorage({
+            key: obj.title,
+            data: obj.movies
+          });
+            
         },
         fail: () => {
           wx.db.toast('获取正在热映信息失败')
@@ -104,6 +119,15 @@ Page({
     movie.stars.on = stars%10==0 ? stars/10 : stars/10-0.5
     movie.stars.half = stars%10==0 ? 0:1
     movie.stars.off = movie.stars.half ==0 ? 5-movie.stars.on : 3-movie.stars.on
+  },
+
+  viewMore: function(event) {
+    const index = event.currentTarget.id;
+    const obj = this.data.modules[index];
+    wx.navigateTo({
+      url: `/pages/lists/lists?title=${obj.title}&url=${obj.url}`
+    });
+      
   }
 
 })

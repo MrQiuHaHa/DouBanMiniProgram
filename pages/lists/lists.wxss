@@ -1,0 +1,64 @@
+/* pages/lists/lists.wxss */
+
+.Container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 15rpx 0;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15rpx 7.5rpx;
+    width: 210rpx;
+    
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.item .photo {
+    width: 210rpx;
+    height: 301rpx;
+    margin-bottom: 15rpx;
+    border-radius: 10rpx;
+    border: 4rpx solid #f2f2f2;
+}
+
+.item .title {
+    font-size: 30rpx;
+    font-weight: bold;
+    width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;/*省略号*/
+    text-align: center;
+    white-space: nowrap;
+}
+
+.item .tips {
+    font-size: 25rpx;
+    display: flex;
+    align-items: center;
+    color: #818181;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    color: #818181;
+    font-size: 25rpx;
+}
+
+.score .stars {
+    display: flex;
+    margin-right: 4rpx;
+}
+
+.stars .star {
+    width: 24rpx;
+    height: 24rpx;
+}

@@ -11,7 +11,7 @@
         <view wx:for="{{ modules }}" wx:key="unique" wx:for-item="module" class="row">
             <view class="title-wrapper">
                 <view class="title">{{ module.title }}</view>
-                <view class="more">查看更多 <view class="arrow"></view> </view>
+                <view id="{{index}}" class="more" bind:tap="viewMore">查看更多 <view class="arrow"></view> </view>
             </view>
             <view class="items">
                 <view wx:for="{{ module.movies }}" wx:key="unique" wx:for-item="movie" class="item">
