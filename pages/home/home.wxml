@@ -38,4 +38,5 @@
             </view>
         </view>
     </view>
+    <view class="bottom"></view>
 </view>
