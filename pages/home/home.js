@@ -43,7 +43,7 @@ Page({
 
     for (let index = 0; index < this.data.modules.length; index++) {
       const obj = this.data.modules[index]
-      obj.movies = wx.getStorageSync(obj.title) || [];
+      obj.movies = wx.getStorageSync(obj.title);
     }
     this.setData(this.data)
   },
@@ -61,6 +61,7 @@ Page({
         success: (result) => {
           const movies = result.data.subjects
           let obj = this.data.modules[index]
+          obj.movies = [];
           for (let idx = 0; idx < movies.length; idx++) {
             let movie = movies[idx].subject || movies[idx]
             this.updateMovie(movie)
