@@ -75,7 +75,7 @@
 }
 
 .item .photo {
-    width: 100%;
+    width: 210rpx;
     height: 301rpx;
     margin-bottom: 15rpx;
 }
