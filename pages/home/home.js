@@ -49,15 +49,13 @@ Page({
           'content-type': 'json'
         },
         success: (result) => {
-          console.log(result)
-          let movies = result.data.subjects
+          const movies = result.data.subjects
           let obj = this.data.modules[index]
           for (let idx = 0; idx < movies.length; idx++) {
-            let movie = movies[idx] || movies[idx].subject
+            let movie = movies[idx].subject || movies[idx]
             this.updateMovie(movie)
             obj.movies.push(movie)
           }
-          // this.data.modules[index].movies = movies
           this.setData(this.data)
         },
         fail: () => {
