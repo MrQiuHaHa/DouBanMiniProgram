@@ -1,5 +1,10 @@
 /* pages/home/home.wxss */
 
+.navigationBar {
+    height: 64rpx;
+    background-color: #42BD55;
+}
+
 .search-wrapper {
     background-color: #42BD55;
     padding: 15rpx;

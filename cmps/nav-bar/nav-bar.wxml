@@ -1,0 +1,8 @@
+<!--cmps/nav-bar/nav-bar.wxml-->
+
+<view class="container">
+    <view class="status-bar"></view>
+    <view class="nav-bar">
+        
+    </view>
+</view>
