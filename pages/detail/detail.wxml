@@ -1,2 +1,3 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+
+<nav-bar title="详情"></nav-bar>

@@ -47,5 +47,8 @@
     "navigationStyle": "custom"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "nav-bar": "/cmps/nav-bar/nav-bar"
+  }
 }

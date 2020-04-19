@@ -2,15 +2,19 @@
 App({
   onLaunch: function () {
    
+    wx.db = {};
+
     this.initToast();
 
-    
+    const sysInfo = wx.getSystemInfoSync();
+    wx.db.statusBarHeight = sysInfo.statusBarHeight;
+    wx.db.navBarHeight = sysInfo.platform=='android' ? 48: 44;
   },
 
   initToast: function () {
     const time = 1500
 
-    wx.db = {};
+    
     wx.db.toast = (title,duration = time) => {
       wx.showToast({
         title: title,

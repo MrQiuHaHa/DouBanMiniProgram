@@ -1,6 +1,6 @@
 <!--pages/home/home.wxml-->
 
-
+<nav-bar title="首页" navBarColor="#42BD55" statusBarColor="#42BD55" titleColor="#FFFFFF" backHidden="true" homeHidden="true"></nav-bar>
 
 <view>
     <view class="search-wrapper">
