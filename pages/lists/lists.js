@@ -21,4 +21,7 @@ Page({
         
   },
 
+  back: function(evt) {
+    console.log('back', evt.detail)
+  }
 })

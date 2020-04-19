@@ -1,6 +1,6 @@
 <!--pages/lists/lists.wxml-->
 
-<nav-bar title="{{ title }}"></nav-bar>
+<nav-bar bind:backDicClick="back" title="{{ title }}"></nav-bar>
 <view class="Container">
     <view class="item" wx:for="{{ movies }}" wx:key="unique" wx:for-item="movie">
         <movie-item movie="{{ movie }}"></movie-item>

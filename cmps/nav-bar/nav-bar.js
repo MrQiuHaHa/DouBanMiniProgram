@@ -46,7 +46,7 @@ Component({
       wx.navigateBack({
         delta: 1
       });
-        
+      this.triggerEvent('backDicClick', {name: 'qiujr'})
     },
     goHome: function() {
       wx.navigateBack({
