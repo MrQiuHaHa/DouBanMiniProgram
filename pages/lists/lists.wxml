@@ -1,8 +1,7 @@
 <!--pages/lists/lists.wxml-->
 
-<view class="nav-bar">
-    <nav-bar bind:backDicClick="back" title="{{ title }}"></nav-bar>
-</view>
+
+<nav-bar bind:backDicClick="back" title="{{ title }}"></nav-bar>
 <view class="Container">
     <view class="item" wx:for="{{ movies }}" wx:key="unique" wx:for-item="movie">
         <movie-item movie="{{ movie }}"></movie-item>

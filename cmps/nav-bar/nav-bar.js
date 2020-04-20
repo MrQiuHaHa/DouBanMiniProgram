@@ -34,7 +34,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    topHeight: 0 
   },
 
   /**
@@ -71,6 +71,9 @@ Component({
       this.setData({
         statusBarStyle: statusBarStyle,
         navBarStyle: navBarStyle
+      });
+      this.setData({
+        topHeight: wx.db.statusBarHeight+wx.db.navBarHeight
       })
     }
   }

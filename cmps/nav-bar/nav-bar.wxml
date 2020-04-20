@@ -1,12 +1,16 @@
 <!--cmps/nav-bar/nav-bar.wxml-->
 
-<view class="container">
-    <view class="status-bar" style="{{ statusBarStyle}} "></view>
-    <view class="nav-bar" style=" {{ navBarStyle }} ">
-        {{ title }}
-        <view class="icons">
-            <image bind:tap="goBack" wx:if="{{ backHidden=='false' }}" class="back" src="/assets/imgs/navbar_back.png"/>
-            <image bind:tap="goHome" wx:if="{{ homeHidden=='false' }}" class="home" src="/assets/imgs/ic_tab_home_normal.png"/>
+<view>
+    <view style="height: {{ topHeight }}px"></view>
+    <view class="container">
+        <view class="status-bar" style="{{ statusBarStyle}} "></view>
+        <view class="nav-bar" style=" {{ navBarStyle }} ">
+            {{ title }}
+            <view class="icons">
+                <image bind:tap="goBack" wx:if="{{ backHidden=='false' }}" class="back" src="/assets/imgs/navbar_back.png"/>
+                <image bind:tap="goHome" wx:if="{{ homeHidden=='false' }}" class="home" src="/assets/imgs/ic_tab_home_normal.png"/>
+            </view>
         </view>
     </view>
 </view>
+
