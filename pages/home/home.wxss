@@ -1,11 +1,5 @@
 /* pages/home/home.wxss */
 
-.nav-bar {
-    position: sticky;
-    top: 0;
-    z-index: 99;
-}
-
 .search-wrapper {
     background-color: #42BD55;
     padding: 15rpx;
