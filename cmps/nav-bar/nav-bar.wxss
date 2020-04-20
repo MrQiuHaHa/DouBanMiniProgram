@@ -1,6 +1,5 @@
 /* cmps/nav-bar/nav-bar.wxss */
 
-
 .nav-bar {
     display: flex;
     justify-content: center;

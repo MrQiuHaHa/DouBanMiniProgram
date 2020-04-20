@@ -1,5 +1,7 @@
 <!--pages/login/login.wxml-->
-<nav-bar title="登录"></nav-bar>
+<view class="nav-bar">
+    <nav-bar title="登录"></nav-bar>
+</view>
 <view class="container">
     <image class="logo" src="/assets/imgs/ic_launcher.png"/>
     <view class="wechat btn-login" bind:tap="wechatLogin">微信登录</view>

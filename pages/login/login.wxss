@@ -1,5 +1,11 @@
 /* pages/login/login.wxss */
 
+.nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
 .container {
     display: flex;
     flex-direction: column;

@@ -1,5 +1,11 @@
 /* pages/lists/lists.wxss */
 
+.nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
 .Container {
     display: flex;
     flex-wrap: wrap;

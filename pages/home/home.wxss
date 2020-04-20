@@ -1,8 +1,9 @@
 /* pages/home/home.wxss */
 
-.navigationBar {
-    height: 64rpx;
-    background-color: #42BD55;
+.nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 99;
 }
 
 .search-wrapper {

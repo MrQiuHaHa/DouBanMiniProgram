@@ -1,6 +1,8 @@
 <!--pages/profile/profile.wxml-->
 
-<nav-bar title="书影音档案" backHidden="true" homeHidden="true"></nav-bar>
+<view class="nav-bar">
+    <nav-bar title="书影音档案" backHidden="true" homeHidden="true"></nav-bar>
+</view>
 <view class="container">
 
     <view>
