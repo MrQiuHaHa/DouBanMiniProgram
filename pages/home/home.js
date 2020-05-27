@@ -35,8 +35,8 @@ Page({
    */
   onLoad: function (options) {
       
-    this.loadLocalData()
-    // this.loadCity(this.loadData)  
+    // this.loadLocalData()
+    this.loadCity(this.loadData)  //因为api调用次数受限，所以第一次使用api加载到缓存数据后就最好把代码切换成上面那句加载本地缓存数据
   },
 
   loadLocalData: function() {
